@@ -118,3 +118,63 @@ CREATE TABLE warehouse.dim_booking
 
     BookingChannel VARCHAR(50) NOT NULL
 );
+
+
+CREATE TABLE warehouse.fact_passenger_experience
+(
+
+    ExperienceKey SERIAL PRIMARY KEY,
+
+    PassengerKey INT NOT NULL,
+
+    FlightKey INT NOT NULL,
+
+    BookingKey INT NOT NULL,
+
+    CabinKey INT NOT NULL,
+
+    DateKey INT NOT NULL,
+
+    Delay INT,
+
+    Fare DECIMAL(10,2),
+
+    AncillaryRevenue DECIMAL(10,2),
+
+    CheckInRating INT,
+
+    BoardingRating INT,
+
+    CrewRating INT,
+
+    SeatComfort INT,
+
+    WiFi INT,
+
+    Entertainment INT,
+
+    Food INT,
+
+    Cleanliness INT,
+
+    BaggageHandling INT,
+
+    NPS INT,
+
+    OverallSatisfaction VARCHAR(20),
+
+    FOREIGN KEY (PassengerKey)
+        REFERENCES warehouse.dim_passenger(PassengerKey),
+
+    FOREIGN KEY (FlightKey)
+        REFERENCES warehouse.dim_flight(FlightKey),
+
+    FOREIGN KEY (BookingKey)
+        REFERENCES warehouse.dim_booking(BookingKey),
+
+    FOREIGN KEY (CabinKey)
+        REFERENCES warehouse.dim_cabin(CabinKey),
+
+    FOREIGN KEY (DateKey)
+        REFERENCES warehouse.dim_date(DateKey)
+);

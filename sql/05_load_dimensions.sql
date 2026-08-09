@@ -335,108 +335,103 @@ INSERT INTO warehouse.dim_booking
 
 SELECT
 
-    BookingID,
+    b.BookingID,
 
-    PassengerID,
+    b.PassengerID,
 
-    FlightID,
+    b.FlightID,
 
-    BookingDate,
+    b.BookingDate,
 
-    INITCAP(TRIM(BookingChannel))
+    INITCAP(TRIM(b.BookingChannel))
 
-FROM staging.stg_bookings;
+FROM staging.stg_bookings b;
 
--- ===========================================================
---7.  Load FactPassengerExperience
--- ===========================================================
+-- ============================================================
+-- LOAD FACT_PASSENGER_EXPERIENCE
+-- ============================================================
 
 INSERT INTO warehouse.fact_passenger_experience
 (
-    PassengerKey,
-    FlightKey,
-    BookingKey,
-    CabinKey,
-    DateKey,
-    Delay,
-    Fare,
-    AncillaryRevenue,
-    CheckInRating,
-    BoardingRating,
-    CrewRating,
-    SeatComfort,
-    WiFi,
-    Entertainment,
-    Food,
-    Cleanliness,
-    BaggageHandling,
-    NPS,
-    OverallSatisfaction
+    passengerkey,
+    flightkey,
+    bookingkey,
+    cabinkey,
+    datekey,
+    delay,
+    fare,
+    ancillaryrevenue,
+    checkinrating,
+    boardingrating,
+    crewrating,
+    seatcomfort,
+    wifi,
+    entertainment,
+    food,
+    cleanliness,
+    baggagehandling,
+    nps,
+    overallsatisfaction,
+    complainttype
 )
 
 SELECT
 
-    dp.PassengerKey,
+    -- Dimension surrogate keys
+    dp.passengerkey,
+    df.flightkey,
+    db.bookingkey,
+    dc.cabinkey,
+    dd.datekey,
 
-    df.FlightKey,
+    -- Flight operational measure
+    sfli.delay,
 
-    db.BookingKey,
+    -- Booking / revenue measures
+    sb.fare,
+    sb.ancillaryrevenue,
 
-    dc.CabinKey,
+    -- Service experience
+    ss.checkinrating,
+    ss.boardingrating,
+    ss.crewrating,
+    ss.seatcomfort,
+    ss.wifi,
+    ss.entertainment,
+    ss.food,
+    ss.cleanliness,
+    ss.baggagehandling,
 
-    dd.DateKey,
+    -- Passenger feedback
+    sf.nps,
+    sf.overallsatisfaction,
 
-    sf.Delay,
-
-    sb.Fare,
-
-    sb.AncillaryRevenue,
-
-    ss.CheckInRating,
-
-    ss.BoardingRating,
-
-    ss.CrewRating,
-
-    ss.SeatComfort,
-
-    ss.WiFi,
-
-    ss.Entertainment,
-
-    ss.Food,
-
-    ss.Cleanliness,
-
-    ss.BaggageHandling,
-
-    fb.NPS,
-
-    fb.OverallSatisfaction
+    -- Complaint
+    NULLIF(TRIM(sf.complaint), 'None')
 
 FROM staging.stg_bookings sb
 
-INNER JOIN warehouse.dim_passenger dp
-ON sb.PassengerID = dp.PassengerID
-
 INNER JOIN warehouse.dim_booking db
-ON sb.BookingID = db.BookingID
+    ON sb.bookingid = db.bookingid
+
+INNER JOIN warehouse.dim_passenger dp
+    ON sb.passengerid = dp.passengerid
 
 INNER JOIN warehouse.dim_flight df
-ON sb.FlightID = df.FlightID
+    ON sb.flightid = df.flightid
+
+INNER JOIN staging.stg_flights sfli
+    ON sb.flightid = sfli.flightid
 
 INNER JOIN warehouse.dim_cabin dc
-ON sb.CabinClass = dc.CabinClass
+    ON LOWER(TRIM(sb.cabinclass))
+       = LOWER(TRIM(dc.cabinclass))
 
 INNER JOIN warehouse.dim_date dd
-ON DATE(sb.BookingDate) = dd.FullDate
+    ON DATE(sb.bookingdate) = dd.fulldate
 
-INNER JOIN staging.stg_service ss
-ON sb.BookingID = ss.BookingID
+LEFT JOIN staging.stg_service ss
+    ON sb.bookingid = ss.bookingid
 
-INNER JOIN staging.stg_feedback fb
-ON sb.BookingID = fb.BookingID
-
-INNER JOIN staging.stg_flights sf
-ON sb.FlightID = sf.FlightID;
-
+LEFT JOIN staging.stg_feedback sf
+    ON sb.bookingid = sf.bookingid;
