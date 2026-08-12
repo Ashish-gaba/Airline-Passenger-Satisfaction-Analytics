@@ -1,0 +1,34 @@
+table 'Dim Cabin'
+	lineageTag: 2c5be42a-ab0c-4de5-993a-6aac6c87c636
+
+	column cabinkey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c159014d-9f68-4962-a6cf-b2a3c2051342
+		summarizeBy: none
+		sourceColumn: cabinkey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column cabinclass
+		dataType: string
+		lineageTag: 353f2f19-eb0e-4168-9e49-9b30e663a14e
+		summarizeBy: none
+		sourceColumn: cabinclass
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim Cabin' = m
+		mode: import
+		source =
+				let
+				  Source = PostgreSQL.Database("localhost:5432", "skyline_airlines"),
+				  #"Navigation 1" = Source{[Schema = "warehouse", Item = "dim_cabin"]}[Data]
+				in
+				  #"Navigation 1"
+
+	annotation PBI_ResultType = Table
+

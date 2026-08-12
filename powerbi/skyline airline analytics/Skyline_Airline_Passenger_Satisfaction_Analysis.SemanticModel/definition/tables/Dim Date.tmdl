@@ -1,0 +1,124 @@
+table 'Dim Date'
+	lineageTag: d00959b5-b60a-43e3-b71d-1e1e31785e35
+	dataCategory: Time
+
+	column datekey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 23dd5016-007d-4673-bf7f-9a535994cb67
+		summarizeBy: none
+		sourceColumn: datekey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column fulldate
+		dataType: dateTime
+		isKey
+		formatString: Long Date
+		lineageTag: 64c2c34e-3f92-49b8-b5eb-09e0042722f7
+		summarizeBy: none
+		sourceColumn: fulldate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column daynumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 8de89841-2929-42ad-985c-8b7872aa20cd
+		summarizeBy: sum
+		sourceColumn: daynumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column monthnumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 3bf1cb4d-47df-4b46-88a2-186fc14a22c3
+		summarizeBy: sum
+		sourceColumn: monthnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column monthname
+		dataType: string
+		lineageTag: ca7a5329-f786-489b-89c6-c2ef359d49c4
+		summarizeBy: none
+		sourceColumn: monthname
+
+		annotation SummarizationSetBy = Automatic
+
+	column quarternumber
+		dataType: int64
+		formatString: 0
+		lineageTag: b7a1dbdd-dd43-412f-b2fe-58ffa76a6218
+		summarizeBy: sum
+		sourceColumn: quarternumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column yearnumber
+		dataType: int64
+		formatString: 0
+		lineageTag: acb1c31a-ff1a-4b25-a41c-77d1ec58fa8f
+		summarizeBy: sum
+		sourceColumn: yearnumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column dayname
+		dataType: string
+		lineageTag: 6ea9f6f4-7cf4-48d4-b013-401e6af51d00
+		summarizeBy: none
+		sourceColumn: dayname
+
+		annotation SummarizationSetBy = Automatic
+
+	column isweekend
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: ed3c9a67-2cc6-44e3-9de0-18fd74693bb7
+		summarizeBy: none
+		sourceColumn: isweekend
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Year' =
+			
+			FORMAT(
+			    'Dim Date'[fulldate],
+			    "MMM yyyy"
+			)
+		lineageTag: 2ec5a051-a8e0-4f67-af15-170043b58ac9
+		summarizeBy: none
+		sortByColumn: 'Year Month'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Year Month' =
+			
+			YEAR('Dim Date'[fulldate]) * 100
+			    + MONTH('Dim Date'[fulldate])
+		formatString: 0
+		lineageTag: d9fcd78b-145e-4cad-b814-212f54b18fbb
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim Date' = m
+		mode: import
+		source =
+				let
+				  Source = PostgreSQL.Database("localhost:5432", "skyline_airlines"),
+				  #"Navigation 1" = Source{[Schema = "warehouse", Item = "dim_date"]}[Data]
+				in
+				  #"Navigation 1"
+
+	annotation PBI_ResultType = Table
+

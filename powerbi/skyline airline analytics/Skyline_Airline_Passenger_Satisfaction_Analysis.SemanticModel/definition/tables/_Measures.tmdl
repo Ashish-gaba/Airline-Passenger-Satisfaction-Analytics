@@ -1,0 +1,239 @@
+table _Measures
+	lineageTag: 5e26f495-2409-4101-9ae3-d352b7e50802
+
+	measure 'Total Passengers' =
+			
+			DISTINCTCOUNT(
+			    'Fact Passenger Experience'[passengerkey]
+			)
+		formatString: 0
+		displayFolder: Core KPIs
+		lineageTag: 3a494fe7-f299-425e-a429-fb1f87fd25b2
+
+	measure 'Satisfied Passengers' =
+			
+			CALCULATE(
+			    [Total Passengers],
+			    'Fact Passenger Experience'[overallsatisfaction] = "Satisfied"
+			)
+		formatString: 0
+		displayFolder: Core KPIs
+		lineageTag: 8bcb8d1b-9d45-4f35-81d0-ac3a81d21fa7
+
+	measure 'Unsatisfied Passengers' =
+			
+			CALCULATE(
+			    [Total Passengers],
+			    'Fact Passenger Experience'[overallsatisfaction] = "Unsatisfied"
+			)
+		formatString: 0
+		lineageTag: e15f0503-1a14-49aa-ac32-afa5658592fa
+
+	measure 'Satisfaction Rate' =
+			
+			DIVIDE(
+			    [Satisfied Passengers],
+			    [Total Passengers]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Core KPIs
+		lineageTag: a6da950d-e8e5-4654-afe1-7cd4ab7dd617
+
+	measure 'Unsatisfaction Rate' =
+			
+			DIVIDE(
+			    [Unsatisfied Passengers],
+			    [Total Passengers]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Core KPIs
+		lineageTag: 4fd29c69-51d2-4251-a841-1578043b62a3
+
+	measure 'Average NPS' =
+			
+			AVERAGE(
+			    'Fact Passenger Experience'[nps]
+			)
+		formatString: 0.00
+		displayFolder: NPS
+		lineageTag: 3b6ede23-82fc-421c-bdac-7f639aa9159b
+
+	measure 'Complaint Count' =
+			
+			CALCULATE(
+			    [Total Passengers],
+			    NOT ISBLANK(
+			        'Fact Passenger Experience'[complainttype]
+			    )
+			)
+		formatString: 0
+		displayFolder: Core KPIs
+		lineageTag: 8b966383-5aad-4f99-9655-a3dc3a4dd50a
+
+	measure 'Complaint Rate' =
+			
+			DIVIDE(
+			    [Complaint Count],
+			    [Total Passengers]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: Core KPIs
+		lineageTag: 0ccbf7fe-78f4-4419-8e71-284ef10f2dfe
+
+	measure 'Average Delay' =
+			
+			AVERAGE(
+			    'Fact Passenger Experience'[delay]
+			)
+		formatString: 0.00
+		displayFolder: Operations
+		lineageTag: 0b41bba8-de34-45dc-83c2-bc1a460751d0
+
+	measure 'Maximum Delay' =
+			
+			MAX(
+			    'Fact Passenger Experience'[delay]
+			)
+		formatString: 0
+		displayFolder: Operations
+		lineageTag: 0cd4726f-818d-4c77-97af-bf4bdee62c34
+
+	measure 'Average Food' =
+			
+			AVERAGE(
+			    'Fact Passenger Experience'[food]
+			)
+		displayFolder: Service Quality
+		lineageTag: d4e22ec6-c63b-4d67-bbab-8fb96f246369
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average WiFi' =
+			
+			AVERAGE(
+			    'Fact Passenger Experience'[wifi]
+			)
+		displayFolder: Service Quality
+		lineageTag: 35dd3efd-ff97-414e-a76e-b48fe0580b14
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average Seat Comfort' =
+			
+			AVERAGE(
+			    'Fact Passenger Experience'[seatcomfort]
+			)
+		displayFolder: Service Quality
+		lineageTag: c8e1c188-8344-4e2a-a59f-167945a0663d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average Crew Rating' =
+			
+			AVERAGE(
+			    'Fact Passenger Experience'[crewrating]
+			)
+		displayFolder: Service Quality
+		lineageTag: fa591ae7-cf68-4e1a-9b23-0037908e9caa
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average Boarding Rating' =
+			
+			AVERAGE(
+			    'Fact Passenger Experience'[boardingrating]
+			)
+		displayFolder: Service Quality
+		lineageTag: c4416f96-b54a-4134-9fb6-498c2c0374c7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average Check-In Rating' =
+			
+			AVERAGE(
+			    'Fact Passenger Experience'[checkinrating]
+			)
+		displayFolder: Service Quality
+		lineageTag: ac6e18aa-2094-4c1d-9f5d-524d1a8564a1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average Cleanliness' =
+			
+			AVERAGE(
+			    'Fact Passenger Experience'[cleanliness]
+			)
+		displayFolder: Service Quality
+		lineageTag: 0f03c97a-50c3-4bdd-bed6-87f84affdefc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average Baggage Handling' =
+			
+			AVERAGE(
+			    'Fact Passenger Experience'[baggagehandling]
+			)
+		displayFolder: Operations
+		lineageTag: 7444d73e-c099-468e-87b5-d8858bb4b288
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Fare Revenue' =
+			
+			SUM(
+			    'Fact Passenger Experience'[fare]
+			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 8b167ade-b286-43de-917e-a1161ee778a8
+
+	measure 'Total Ancillary Revenue' =
+			
+			SUM(
+			    'Fact Passenger Experience'[ancillaryrevenue]
+			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: fafafc9d-2327-4b52-b510-79d8c1b361af
+
+	measure 'Total Revenue' =
+			
+			[Total Fare Revenue]
+			    + [Total Ancillary Revenue]
+		formatString: \$#,0.0;(\$#,0.0);\$#,0.0
+		displayFolder: Core KPIs
+		lineageTag: e83fde21-ffac-41a9-8810-f136b9cc1052
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Revenue per Passenger' =
+			
+			DIVIDE(
+			    [Total Revenue],
+			    [Total Passengers]
+			)
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Core KPIs
+		lineageTag: f5c823c3-d205-43e1-a868-888e5d869c97
+
+	column MeasureGroup
+		isHidden
+		lineageTag: 2e48e2b3-1f9b-499e-840b-7fd7d0b9605b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MeasureGroup]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "MeasureGroup",
+				    STRING,
+				    {
+				        {"Airline KPIs"}
+				    }
+				)
+
+	annotation PBI_Id = e27abc38e44b457ba30bca86e5129212
+

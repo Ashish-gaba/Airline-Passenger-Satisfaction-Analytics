@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Skyline_Airline_Passenger_Satisfaction_Analysis"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "26575e55-c3d4-4bcc-ae70-1b414abb1851"
+  }
+}

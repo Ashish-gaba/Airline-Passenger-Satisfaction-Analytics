@@ -1,0 +1,218 @@
+table 'Fact Passenger Experience'
+	lineageTag: a4c21d0d-5f11-4a66-bd79-a9e248848294
+
+	column experiencekey
+		dataType: int64
+		formatString: 0
+		lineageTag: 1ea016b4-76a7-4de1-82ab-f13289c0fdad
+		summarizeBy: sum
+		sourceColumn: experiencekey
+
+		annotation SummarizationSetBy = Automatic
+
+	column passengerkey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 0a9b0f45-e554-4e67-9394-00ad348a4d40
+		summarizeBy: none
+		sourceColumn: passengerkey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column flightkey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4b2dbf69-87a8-44a4-87f1-97accd2af49f
+		summarizeBy: none
+		sourceColumn: flightkey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column bookingkey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: bb0842af-f441-4d15-b680-6362076f6648
+		summarizeBy: none
+		sourceColumn: bookingkey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column cabinkey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b2bf9ba6-404b-4d3a-8685-f6b877cf0a86
+		summarizeBy: none
+		sourceColumn: cabinkey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column datekey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c81fd12a-d9e7-45ec-8dd3-b493e72f5d36
+		summarizeBy: none
+		sourceColumn: datekey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column delay
+		dataType: int64
+		formatString: 0
+		lineageTag: 7b2ef17f-f71b-4433-8f09-d8beb39ace77
+		summarizeBy: sum
+		sourceColumn: delay
+
+		annotation SummarizationSetBy = Automatic
+
+	column fare
+		dataType: double
+		lineageTag: 3a402d60-c0ed-4bf0-9ab5-45ec26ab2242
+		summarizeBy: sum
+		sourceColumn: fare
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ancillaryrevenue
+		dataType: double
+		lineageTag: d6c4f38a-80dc-433e-ae5d-6e359d0ffc9d
+		summarizeBy: sum
+		sourceColumn: ancillaryrevenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column checkinrating
+		dataType: int64
+		formatString: 0
+		lineageTag: d514c891-38c3-4dab-878d-300f950fdc3b
+		summarizeBy: sum
+		sourceColumn: checkinrating
+
+		annotation SummarizationSetBy = Automatic
+
+	column boardingrating
+		dataType: int64
+		formatString: 0
+		lineageTag: 2847be6f-4904-41de-b8fc-784d51d5618f
+		summarizeBy: sum
+		sourceColumn: boardingrating
+
+		annotation SummarizationSetBy = Automatic
+
+	column crewrating
+		dataType: int64
+		formatString: 0
+		lineageTag: 790dca19-842b-42db-ae8d-763e1a534c02
+		summarizeBy: sum
+		sourceColumn: crewrating
+
+		annotation SummarizationSetBy = Automatic
+
+	column seatcomfort
+		dataType: int64
+		formatString: 0
+		lineageTag: 030f2797-b568-4581-a3b0-8852eb2d4046
+		summarizeBy: sum
+		sourceColumn: seatcomfort
+
+		annotation SummarizationSetBy = Automatic
+
+	column wifi
+		dataType: int64
+		formatString: 0
+		lineageTag: ede2a183-3e07-4739-aad2-2f0bd07b2580
+		summarizeBy: sum
+		sourceColumn: wifi
+
+		annotation SummarizationSetBy = Automatic
+
+	column entertainment
+		dataType: int64
+		formatString: 0
+		lineageTag: 99a99330-5668-44ae-928f-b088cf2e0375
+		summarizeBy: sum
+		sourceColumn: entertainment
+
+		annotation SummarizationSetBy = Automatic
+
+	column food
+		dataType: int64
+		formatString: 0
+		lineageTag: ab4d44cc-ebd7-4c66-82bc-75a5203270eb
+		summarizeBy: sum
+		sourceColumn: food
+
+		annotation SummarizationSetBy = Automatic
+
+	column cleanliness
+		dataType: int64
+		formatString: 0
+		lineageTag: a5f09ebc-e21c-4875-bf99-f5f63259498d
+		summarizeBy: sum
+		sourceColumn: cleanliness
+
+		annotation SummarizationSetBy = Automatic
+
+	column baggagehandling
+		dataType: int64
+		formatString: 0
+		lineageTag: 0468ff05-85b0-490d-a880-a062a0ccb04c
+		summarizeBy: sum
+		sourceColumn: baggagehandling
+
+		annotation SummarizationSetBy = Automatic
+
+	column nps
+		dataType: int64
+		formatString: 0
+		lineageTag: c8b646a7-e298-4a9f-afa9-f3874436cbd9
+		summarizeBy: sum
+		sourceColumn: nps
+
+		annotation SummarizationSetBy = Automatic
+
+	column overallsatisfaction
+		dataType: string
+		lineageTag: 5adadb97-68e2-474e-b281-a2df08501aa0
+		summarizeBy: none
+		sourceColumn: overallsatisfaction
+
+		annotation SummarizationSetBy = Automatic
+
+	column complainttype
+		dataType: string
+		lineageTag: 0ccb4044-7fc1-489f-9865-51f8ee344d30
+		summarizeBy: none
+		sourceColumn: complainttype
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact Passenger Experience' = m
+		mode: import
+		source =
+				let
+				  Source = PostgreSQL.Database("localhost:5432", "skyline_airlines"),
+				  #"Navigation 1" = Source{[Schema = "warehouse", Item = "fact_passenger_experience"]}[Data]
+				in
+				  #"Navigation 1"
+
+	annotation PBI_ResultType = Table
+

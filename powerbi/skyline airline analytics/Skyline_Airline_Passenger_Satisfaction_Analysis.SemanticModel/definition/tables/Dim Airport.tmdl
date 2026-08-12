@@ -1,0 +1,74 @@
+table 'Dim Airport'
+	lineageTag: efc5a6d4-4034-4fd2-81c9-7f0316e9f969
+
+	column airportkey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 21a67d72-b1ce-4608-9ec6-706847a0a811
+		summarizeBy: none
+		sourceColumn: airportkey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column airportcode
+		dataType: string
+		lineageTag: 0e9bd423-4598-413d-b845-9f12c01fecd3
+		summarizeBy: none
+		sourceColumn: airportcode
+
+		annotation SummarizationSetBy = Automatic
+
+	column airportname
+		dataType: string
+		lineageTag: 5992d2dc-80f4-4202-bdec-60810c37ab14
+		summarizeBy: none
+		sourceColumn: airportname
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 49363067-0fcc-4df2-b939-2167d235c872
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column state
+		dataType: string
+		lineageTag: 3718ed0f-948b-4bb1-80cc-6fbb2b14db25
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: fd37d5eb-01a7-4f46-97ea-019916204e62
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column airporttype
+		dataType: string
+		lineageTag: 7dee6736-4a42-4cdd-a231-914269c6dbcd
+		summarizeBy: none
+		sourceColumn: airporttype
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim Airport' = m
+		mode: import
+		source =
+				let
+				  Source = PostgreSQL.Database("localhost:5432", "skyline_airlines"),
+				  #"Navigation 1" = Source{[Schema = "warehouse", Item = "dim_airport"]}[Data]
+				in
+				  #"Navigation 1"
+
+	annotation PBI_ResultType = Table
+

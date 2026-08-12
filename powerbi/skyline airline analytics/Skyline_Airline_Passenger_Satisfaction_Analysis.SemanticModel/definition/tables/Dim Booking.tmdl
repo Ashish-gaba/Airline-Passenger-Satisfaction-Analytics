@@ -1,0 +1,72 @@
+table 'Dim Booking'
+	lineageTag: 616250cd-4792-4a82-8565-5f3858f842d6
+
+	column bookingkey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e4d2d6f4-df1b-4490-bc05-28bea237ebd2
+		summarizeBy: none
+		sourceColumn: bookingkey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column bookingid
+		dataType: string
+		lineageTag: 68e53a6e-dcc7-448f-ab90-ef934d2dbdd4
+		summarizeBy: none
+		sourceColumn: bookingid
+
+		annotation SummarizationSetBy = Automatic
+
+	column passengerid
+		dataType: string
+		lineageTag: 877e0323-d4b9-4525-bc41-7941d511f596
+		summarizeBy: none
+		sourceColumn: passengerid
+
+		annotation SummarizationSetBy = Automatic
+
+	column flightid
+		dataType: string
+		lineageTag: 240ac3ee-c606-4429-9244-90377d315fcb
+		summarizeBy: none
+		sourceColumn: flightid
+
+		annotation SummarizationSetBy = Automatic
+
+	column bookingdate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 83f2e9c4-5522-4e91-a78c-cb4eed76d48b
+		summarizeBy: none
+		sourceColumn: bookingdate
+
+		variation Variation
+			isDefault
+			relationship: ea2d2872-b43a-4247-9a59-0b6de38a4f3c
+			defaultHierarchy: LocalDateTable_54ae0bfe-b54e-43ff-8a25-1c49af57e713.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column bookingchannel
+		dataType: string
+		lineageTag: 8040f3f0-a3f6-40bb-9581-f3ebf5c6ae2e
+		summarizeBy: none
+		sourceColumn: bookingchannel
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim Booking' = m
+		mode: import
+		source =
+				let
+				  Source = PostgreSQL.Database("localhost:5432", "skyline_airlines"),
+				  #"Navigation 1" = Source{[Schema = "warehouse", Item = "dim_booking"]}[Data]
+				in
+				  #"Navigation 1"
+
+	annotation PBI_ResultType = Table
+

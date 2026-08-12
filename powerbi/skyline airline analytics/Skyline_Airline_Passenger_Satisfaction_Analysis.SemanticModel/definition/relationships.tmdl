@@ -1,0 +1,68 @@
+relationship ea2d2872-b43a-4247-9a59-0b6de38a4f3c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Dim Booking'.bookingdate
+	toColumn: LocalDateTable_54ae0bfe-b54e-43ff-8a25-1c49af57e713.Date
+
+relationship ebaee9c6-6d07-40fd-8bbb-b1e3211caac1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Dim Flight'.departuretime
+	toColumn: LocalDateTable_4fc94a33-f926-469a-83c6-795dd4286a7a.Date
+
+relationship 1d98ed27-8a88-4aa6-928f-594882fda418
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Dim Flight'.arrivaltime
+	toColumn: LocalDateTable_3a241877-2aaa-4c09-b9f1-15fe38813cbb.Date
+
+relationship 3a47cbbe-502d-416b-9981-e77c07471c76
+	fromColumn: 'Dim Flight'.aircraftkey
+	toColumn: 'Dim Aircraft'.aircraftkey
+
+	annotation PBI_IsFromSource = FS
+
+relationship dd8dceaf-d36e-432b-86b7-3634b03f3b85
+	fromColumn: 'Dim Flight'.destinationairportkey
+	toColumn: 'Dim Airport'.airportkey
+
+	annotation PBI_IsFromSource = FS
+
+relationship be16c6b2-35c4-4036-b081-ee9b33d9c030
+	isActive: false
+	fromColumn: 'Dim Flight'.originairportkey
+	toColumn: 'Dim Airport'.airportkey
+
+	annotation PBI_IsFromSource = FS
+
+relationship f8132413-0183-402d-94c5-ed67a68ba628
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Fact Passenger Experience'.bookingkey
+	toColumn: 'Dim Booking'.bookingkey
+
+	annotation PBI_IsFromSource = FS
+
+relationship f8c440ff-c641-4db6-ad47-e52f240ba15d
+	fromColumn: 'Fact Passenger Experience'.cabinkey
+	toColumn: 'Dim Cabin'.cabinkey
+
+	annotation PBI_IsFromSource = FS
+
+relationship 07169f41-fcb9-4f72-96ef-6beded14cfa6
+	fromColumn: 'Fact Passenger Experience'.datekey
+	toColumn: 'Dim Date'.datekey
+
+	annotation PBI_IsFromSource = FS
+
+relationship bb9e99fe-d1cf-45a4-a884-101d9843b230
+	fromColumn: 'Fact Passenger Experience'.flightkey
+	toColumn: 'Dim Flight'.flightkey
+
+	annotation PBI_IsFromSource = FS
+
+relationship ca1a5d0c-ed77-4353-a175-8955b08ab488
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: 'Fact Passenger Experience'.passengerkey
+	toColumn: 'Dim Passenger'.passengerkey
+
+	annotation PBI_IsFromSource = FS
+

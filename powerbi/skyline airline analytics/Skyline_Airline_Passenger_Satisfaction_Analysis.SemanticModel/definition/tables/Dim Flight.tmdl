@@ -1,0 +1,126 @@
+table 'Dim Flight'
+	lineageTag: b0bffbf4-7846-4f7d-b0d6-d863dc986eee
+
+	column flightkey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c34fbbf7-50e2-4ae8-a838-d9c95ea0d310
+		summarizeBy: none
+		sourceColumn: flightkey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column flightid
+		dataType: string
+		lineageTag: 98890e87-6353-44e7-b5ab-5d12632042b8
+		summarizeBy: none
+		sourceColumn: flightid
+
+		annotation SummarizationSetBy = Automatic
+
+	column route
+		dataType: string
+		lineageTag: b62bd94f-4619-4311-bee1-2224a98f0fc3
+		summarizeBy: none
+		sourceColumn: route
+
+		annotation SummarizationSetBy = Automatic
+
+	column originairportkey
+		dataType: int64
+		formatString: 0
+		lineageTag: 568c6d8b-ef50-477b-a30c-0c8ad17958ce
+		summarizeBy: sum
+		sourceColumn: originairportkey
+
+		annotation SummarizationSetBy = Automatic
+
+	column destinationairportkey
+		dataType: int64
+		formatString: 0
+		lineageTag: 3cc25be9-74d0-4e0a-a3e7-03e975fc7f1e
+		summarizeBy: none
+		sourceColumn: destinationairportkey
+
+		annotation SummarizationSetBy = Automatic
+
+	column aircraftkey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 0a43cd5c-1387-4d90-a634-3f169d9e660e
+		summarizeBy: none
+		sourceColumn: aircraftkey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column duration
+		dataType: int64
+		formatString: 0
+		lineageTag: 9521cb76-3e1f-435c-967b-30e23d45cd7f
+		summarizeBy: sum
+		sourceColumn: duration
+
+		annotation SummarizationSetBy = Automatic
+
+	column distance
+		dataType: int64
+		formatString: 0
+		lineageTag: 2d6dfded-4118-4dd3-88f9-4cf0f439c62f
+		summarizeBy: sum
+		sourceColumn: distance
+
+		annotation SummarizationSetBy = Automatic
+
+	column routetype
+		dataType: string
+		lineageTag: 1611aeb4-1e1c-4477-9e02-aed23d030a25
+		summarizeBy: none
+		sourceColumn: routetype
+
+		annotation SummarizationSetBy = Automatic
+
+	column departuretime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3b6fa8b6-4ac2-44e3-a35d-a7b24907dcd7
+		summarizeBy: none
+		sourceColumn: departuretime
+
+		variation Variation
+			isDefault
+			relationship: ebaee9c6-6d07-40fd-8bbb-b1e3211caac1
+			defaultHierarchy: LocalDateTable_4fc94a33-f926-469a-83c6-795dd4286a7a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column arrivaltime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 3d128055-b675-42d5-a169-286f0e366058
+		summarizeBy: none
+		sourceColumn: arrivaltime
+
+		variation Variation
+			isDefault
+			relationship: 1d98ed27-8a88-4aa6-928f-594882fda418
+			defaultHierarchy: LocalDateTable_3a241877-2aaa-4c09-b9f1-15fe38813cbb.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim Flight' = m
+		mode: import
+		source =
+				let
+				  Source = PostgreSQL.Database("localhost:5432", "skyline_airlines"),
+				  #"Navigation 1" = Source{[Schema = "warehouse", Item = "dim_flight"]}[Data]
+				in
+				  #"Navigation 1"
+
+	annotation PBI_ResultType = Table
+

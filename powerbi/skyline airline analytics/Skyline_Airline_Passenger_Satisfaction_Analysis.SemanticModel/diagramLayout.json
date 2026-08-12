@@ -1,0 +1,130 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 716.70554027016078,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 3.6900777550361,
+            "y": 773.170335840575
+          },
+          "nodeIndex": "Dim Aircraft",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 984.17075345926833,
+            "y": 809.83185228066668
+          },
+          "nodeIndex": "Dim Airport",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 800.05681090543737,
+            "y": 376.51838935513854
+          },
+          "nodeIndex": "Dim Booking",
+          "size": {
+            "height": 224,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 371.48856819825812
+          },
+          "nodeIndex": "Dim Cabin",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 716.70554027016078,
+            "y": 0
+          },
+          "nodeIndex": "Dim Date",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 387.88159481179508,
+            "y": 776.71206858213077
+          },
+          "nodeIndex": "Dim Flight",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 146.5120379496887,
+            "y": 0
+          },
+          "nodeIndex": "Dim Passenger",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 388.72680760590794,
+            "y": 299.71718302540967
+          },
+          "nodeIndex": "Fact Passenger Experience",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1268.1707534592683,
+            "y": 438.35603429106538
+          },
+          "nodeIndex": "_Measures",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 42.96875,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

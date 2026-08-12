@@ -1,0 +1,31 @@
+model Model
+	culture: en-IN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Dim Aircraft","Dim Airport","Dim Booking","Dim Cabin","Dim Date","Dim Flight","Dim Passenger","Fact Passenger Experience"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Dim Aircraft'
+ref table 'Dim Airport'
+ref table 'Dim Booking'
+ref table DateTableTemplate_b679c5b1-b0d4-451d-97b6-d699adb1a6ea
+ref table LocalDateTable_54ae0bfe-b54e-43ff-8a25-1c49af57e713
+ref table 'Dim Cabin'
+ref table 'Dim Date'
+ref table 'Dim Flight'
+ref table LocalDateTable_4fc94a33-f926-469a-83c6-795dd4286a7a
+ref table LocalDateTable_3a241877-2aaa-4c09-b9f1-15fe38813cbb
+ref table 'Dim Passenger'
+ref table 'Fact Passenger Experience'
+ref table _Measures
+
+ref cultureInfo en-IN
+

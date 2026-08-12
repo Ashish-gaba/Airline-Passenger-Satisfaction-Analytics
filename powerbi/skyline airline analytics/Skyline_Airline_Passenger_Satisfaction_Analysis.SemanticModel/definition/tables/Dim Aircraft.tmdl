@@ -1,0 +1,50 @@
+table 'Dim Aircraft'
+	lineageTag: 7603fbc4-b38b-4ecf-a40c-499d9aa7f575
+
+	column aircraftkey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 70723a27-bd20-4196-bbab-f78d1eaabacf
+		summarizeBy: none
+		sourceColumn: aircraftkey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column aircraftname
+		dataType: string
+		lineageTag: ea85a282-1914-4a82-8e8e-f70b94fba6ca
+		summarizeBy: none
+		sourceColumn: aircraftname
+
+		annotation SummarizationSetBy = Automatic
+
+	column manufacturer
+		dataType: string
+		lineageTag: 9fa62488-81c2-465d-b15b-78a827076400
+		summarizeBy: none
+		sourceColumn: manufacturer
+
+		annotation SummarizationSetBy = Automatic
+
+	column aircraftfamily
+		dataType: string
+		lineageTag: abb2e64a-e1ef-4e67-99ad-3cfdf5378851
+		summarizeBy: none
+		sourceColumn: aircraftfamily
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim Aircraft' = m
+		mode: import
+		source =
+				let
+				  Source = PostgreSQL.Database("localhost:5432", "skyline_airlines"),
+				  #"Navigation 1" = Source{[Schema = "warehouse", Item = "dim_aircraft"]}[Data]
+				in
+				  #"Navigation 1"
+
+	annotation PBI_ResultType = Table
+

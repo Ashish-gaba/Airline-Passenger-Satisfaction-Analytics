@@ -1,0 +1,91 @@
+table 'Dim Passenger'
+	lineageTag: 1d255cba-9586-4fe0-883a-a5c3b277af58
+
+	column passengerkey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b1e86ddf-7a6d-4508-b2d6-a9e2abdf5162
+		summarizeBy: none
+		sourceColumn: passengerkey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column passengerid
+		dataType: string
+		lineageTag: 008486a8-47b6-4e82-b3ca-8ebb135bba6d
+		summarizeBy: none
+		sourceColumn: passengerid
+
+		annotation SummarizationSetBy = Automatic
+
+	column age
+		dataType: int64
+		formatString: 0
+		lineageTag: 7f132b76-fc8c-4c8e-a745-12a56cb8b6b1
+		summarizeBy: sum
+		sourceColumn: age
+
+		annotation SummarizationSetBy = Automatic
+
+	column agegroup
+		dataType: string
+		lineageTag: a6f8aebd-1b70-4b5e-b34c-2c446fd1f7b6
+		summarizeBy: none
+		sourceColumn: agegroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column gender
+		dataType: string
+		lineageTag: 413cdd49-4315-46e2-b187-27221a783900
+		summarizeBy: none
+		sourceColumn: gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column customertype
+		dataType: string
+		lineageTag: 11b209b2-cf11-488d-a79e-76676d9e228b
+		summarizeBy: none
+		sourceColumn: customertype
+
+		annotation SummarizationSetBy = Automatic
+
+	column loyaltytier
+		dataType: string
+		lineageTag: 841176d1-d15e-4f57-9113-1690e5f4e1b5
+		summarizeBy: none
+		sourceColumn: loyaltytier
+
+		annotation SummarizationSetBy = Automatic
+
+	column traveltype
+		dataType: string
+		lineageTag: a405196a-5d08-438b-a18e-01894b6035dd
+		summarizeBy: none
+		sourceColumn: traveltype
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 4991115f-78b9-4fbc-90a5-09ead020d1b2
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim Passenger' = m
+		mode: import
+		source =
+				let
+				  Source = PostgreSQL.Database("localhost:5432", "skyline_airlines"),
+				  #"Navigation 1" = Source{[Schema = "warehouse", Item = "dim_passenger"]}[Data]
+				in
+				  #"Navigation 1"
+
+	annotation PBI_ResultType = Table
+
