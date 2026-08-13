@@ -1,91 +1,85 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "a135550daa080b50b59c",
+  "name": "32dbacc2de368d243d5d",
   "position": {
-    "x": 47.999999999999993,
-    "y": 272,
-    "z": 6000,
-    "height": 176,
-    "width": 288,
-    "tabOrder": 6000
+    "x": 32,
+    "y": 95.999999999999986,
+    "z": 13000,
+    "height": 64,
+    "width": 160,
+    "tabOrder": 13000
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "slicer",
     "query": {
       "queryState": {
-        "Category": {
+        "Values": {
           "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim Date"
+                      "Entity": "Dim Flight"
                     }
                   },
-                  "Property": "Month Year"
+                  "Property": "routetype"
                 }
               },
-              "queryRef": "Dim Date.Month Year",
-              "nativeQueryRef": "Month Year",
+              "queryRef": "Dim Flight.routetype",
+              "nativeQueryRef": "routetype",
               "active": true
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Satisfaction Rate"
-                }
-              },
-              "queryRef": "_Measures.Satisfaction Rate",
-              "nativeQueryRef": "Satisfaction Rate"
             }
           ]
         }
       }
     },
     "objects": {
-      "lineStyles": [
+      "data": [
         {
           "properties": {
-            "areaShow": {
+            "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "'Dropdown'"
                 }
               }
             }
           }
         }
       ],
-      "labels": [
+      "general": [
+        {
+          "properties": {}
+        }
+      ],
+      "selection": [
         {
           "properties": {
-            "show": {
+            "selectAllCheckboxEnabled": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
           }
         }
       ],
-      "seriesLabels": [
+      "header": [
         {
           "properties": {
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Route Type'"
                 }
               }
             }
@@ -94,13 +88,33 @@
       ]
     },
     "visualContainerObjects": {
-      "border": [
+      "title": [
         {
           "properties": {
             "show": {
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Route Type'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

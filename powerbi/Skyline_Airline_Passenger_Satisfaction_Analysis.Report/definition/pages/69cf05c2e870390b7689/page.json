@@ -4,5 +4,10 @@
   "displayName": "Executive Summary",
   "displayOption": "FitToPage",
   "height": 720,
-  "width": 1280
+  "width": 1280,
+  "pageBinding": {
+    "name": "8865862c0739d43090ce",
+    "type": "Default",
+    "parameters": []
+  }
 }

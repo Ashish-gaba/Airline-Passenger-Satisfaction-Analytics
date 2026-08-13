@@ -4,7 +4,7 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 716.70554027016078,
+        "x": 545.66166255017743,
         "y": 0
       },
       "nodes": [
@@ -112,6 +112,31 @@
           "nodeIndex": "_Measures",
           "size": {
             "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1552.1707534592683,
+            "y": 438.35603429106538
+          },
+          "nodeIndex": "Service Categories",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1836.1707534592683,
+            "y": 390.35603429106538
+          },
+          "nodeIndex": "warehouse vw_route_priority",
+          "nodeLineageTag": "348c4e7e-8ddd-44b3-8ef0-9fba9c51f2b1",
+          "size": {
+            "height": 296,
             "width": 234
           },
           "zIndex": 0

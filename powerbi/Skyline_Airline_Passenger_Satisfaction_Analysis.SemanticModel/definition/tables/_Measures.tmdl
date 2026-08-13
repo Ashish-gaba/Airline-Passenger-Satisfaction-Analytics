@@ -60,12 +60,7 @@ table _Measures
 
 	measure 'Complaint Count' =
 			
-			CALCULATE(
-			    [Total Passengers],
-			    NOT ISBLANK(
-			        'Fact Passenger Experience'[complainttype]
-			    )
-			)
+			COUNT('Fact Passenger Experience'[complainttype])
 		formatString: 0
 		displayFolder: Core KPIs
 		lineageTag: 8b966383-5aad-4f99-9655-a3dc3a4dd50a
@@ -213,6 +208,14 @@ table _Measures
 		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		displayFolder: Core KPIs
 		lineageTag: f5c823c3-d205-43e1-a868-888e5d869c97
+
+	measure 'Average Entertainment' =
+			
+			AVERAGE('Fact Passenger Experience'[entertainment])
+		displayFolder: Service Quality
+		lineageTag: be6cc371-4c50-40e1-a23d-2871cb660764
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column MeasureGroup
 		isHidden

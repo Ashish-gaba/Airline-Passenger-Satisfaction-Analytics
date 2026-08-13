@@ -9,7 +9,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["Dim Aircraft","Dim Airport","Dim Booking","Dim Cabin","Dim Date","Dim Flight","Dim Passenger","Fact Passenger Experience"]
+annotation PBI_QueryOrder = ["Dim Aircraft","Dim Airport","Dim Booking","Dim Cabin","Dim Date","Dim Flight","Dim Passenger","Fact Passenger Experience","warehouse vw_route_priority"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -26,6 +26,8 @@ ref table LocalDateTable_3a241877-2aaa-4c09-b9f1-15fe38813cbb
 ref table 'Dim Passenger'
 ref table 'Fact Passenger Experience'
 ref table _Measures
+ref table 'Service Categories'
+ref table 'warehouse vw_route_priority'
 
 ref cultureInfo en-IN
 

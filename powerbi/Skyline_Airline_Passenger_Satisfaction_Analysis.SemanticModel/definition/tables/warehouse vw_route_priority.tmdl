@@ -1,0 +1,99 @@
+table 'warehouse vw_route_priority'
+	lineageTag: 348c4e7e-8ddd-44b3-8ef0-9fba9c51f2b1
+
+	column route
+		dataType: string
+		lineageTag: 8582d212-a1c1-40c1-be1f-86234a64f67e
+		summarizeBy: none
+		sourceColumn: route
+
+		annotation SummarizationSetBy = Automatic
+
+	column routetype
+		dataType: string
+		lineageTag: bd1f7e2c-04bd-475b-beba-08e5fc2d36d9
+		summarizeBy: none
+		sourceColumn: routetype
+
+		annotation SummarizationSetBy = Automatic
+
+	column passenger_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 08c5e0a4-f897-4fc0-97ae-0d86d92dac33
+		summarizeBy: sum
+		sourceColumn: passenger_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column satisfaction_rate
+		dataType: double
+		lineageTag: 0ea30b7f-d6b2-4434-825e-8f690fb6c32a
+		summarizeBy: sum
+		sourceColumn: satisfaction_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column complaint_rate
+		dataType: double
+		lineageTag: f14353a6-3140-4e13-bdf2-16d2c7d78ba4
+		summarizeBy: sum
+		sourceColumn: complaint_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column average_delay
+		dataType: double
+		lineageTag: 92a79bcb-1eb9-4587-b499-c9ecb38a4a52
+		summarizeBy: sum
+		sourceColumn: average_delay
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_revenue
+		dataType: double
+		lineageTag: cc88b79d-eb14-49b0-9b2a-d5b70f809eb7
+		summarizeBy: sum
+		sourceColumn: total_revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column priority_score
+		dataType: double
+		lineageTag: 7c67e046-5b77-4eb5-bca0-a23822a19f93
+		summarizeBy: sum
+		sourceColumn: priority_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column priority_category
+		dataType: string
+		lineageTag: 3fa10056-5585-49d8-a09d-de84bf4aa120
+		summarizeBy: none
+		sourceColumn: priority_category
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'warehouse vw_route_priority' = m
+		mode: import
+		source =
+				let
+				  Source = PostgreSQL.Database("localhost:5432", "skyline_airlines"),
+				    warehouse_vw_route_priority = Source{[Schema="warehouse",Item="vw_route_priority"]}[Data]
+				in
+				    warehouse_vw_route_priority
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

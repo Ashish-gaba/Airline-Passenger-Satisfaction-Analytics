@@ -1,0 +1,52 @@
+table 'Service Categories'
+	lineageTag: f5e1ca59-163f-46eb-b064-adafa8a24c2f
+
+	measure 'Average Service Rating' = ```
+			
+			SWITCH(
+			    SELECTEDVALUE('Service Categories'[Service Category]),
+			    
+			    "WiFi", [Average WiFi],
+			    "Entertainment", [Average Entertainment],
+			    "Seat Comfort", [Average Seat Comfort],
+			    "Food", [Average Food],
+			    "Boarding", [Average Boarding Rating],
+			    "Check-In", [Average Check-In Rating],
+			    "Baggage Handling", [Average Baggage Handling],
+			    "Crew", [Average Crew Rating],
+			    "Cleanliness", [Average Cleanliness]
+			)
+			```
+		lineageTag: 61a2173e-7959-451a-8598-2d109831c6df
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Service Category'
+		lineageTag: 5a00177b-7989-43ae-b2be-3fa8153998cd
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Service Category]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Service Categories' = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "Service Category", STRING,
+				    {
+				        {"WiFi"},
+				        {"Entertainment"},
+				        {"Seat Comfort"},
+				        {"Food"},
+				        {"Boarding"},
+				        {"Check-In"},
+				        {"Baggage Handling"},
+				        {"Crew"},
+				        {"Cleanliness"}
+				    }
+				)
+
+	annotation PBI_Id = ce5d97af7367477a84353f239504daa1
+

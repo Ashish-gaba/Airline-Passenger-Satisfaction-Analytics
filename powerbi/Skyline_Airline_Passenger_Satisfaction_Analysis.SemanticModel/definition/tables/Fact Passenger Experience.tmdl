@@ -205,6 +205,21 @@ table 'Fact Passenger Experience'
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Delay Category' =
+			
+			SWITCH(
+			    TRUE(),
+			    'Fact Passenger Experience'[delay] <= 0, "On Time",
+			    'Fact Passenger Experience'[delay] <= 30, "Minor Delay",
+			    'Fact Passenger Experience'[delay] <= 60, "Moderate Delay",
+			    'Fact Passenger Experience'[delay] <= 120, "Major Delay",
+			    "Severe Delay"
+			)
+		lineageTag: a0013bcb-27c2-4fa3-a1a4-0c3174c463c4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition 'Fact Passenger Experience' = m
 		mode: import
 		source =

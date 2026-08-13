@@ -1,91 +1,78 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
-  "name": "a135550daa080b50b59c",
+  "name": "a414daea7c03b3431e80",
   "position": {
-    "x": 47.999999999999993,
-    "y": 272,
-    "z": 6000,
-    "height": 176,
-    "width": 288,
-    "tabOrder": 6000
+    "x": 368,
+    "y": 95.999999999999986,
+    "z": 15000,
+    "height": 64,
+    "width": 160,
+    "tabOrder": 15000
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "slicer",
     "query": {
       "queryState": {
-        "Category": {
+        "Values": {
           "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Dim Date"
+                      "Entity": "Dim Passenger"
                     }
                   },
-                  "Property": "Month Year"
+                  "Property": "loyaltytier"
                 }
               },
-              "queryRef": "Dim Date.Month Year",
-              "nativeQueryRef": "Month Year",
+              "queryRef": "Dim Passenger.loyaltytier",
+              "nativeQueryRef": "loyaltytier",
               "active": true
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Satisfaction Rate"
-                }
-              },
-              "queryRef": "_Measures.Satisfaction Rate",
-              "nativeQueryRef": "Satisfaction Rate"
             }
           ]
         }
       }
     },
     "objects": {
-      "lineStyles": [
+      "data": [
         {
           "properties": {
-            "areaShow": {
+            "mode": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "'Dropdown'"
                 }
               }
             }
           }
         }
       ],
-      "labels": [
+      "general": [
+        {
+          "properties": {}
+        }
+      ],
+      "selection": [
         {
           "properties": {
-            "show": {
+            "selectAllCheckboxEnabled": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
           }
         }
       ],
-      "seriesLabels": [
+      "header": [
         {
           "properties": {
-            "show": {
+            "text": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "'Loyality Tier'"
                 }
               }
             }
@@ -94,13 +81,13 @@
       ]
     },
     "visualContainerObjects": {
-      "border": [
+      "title": [
         {
           "properties": {
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             }
