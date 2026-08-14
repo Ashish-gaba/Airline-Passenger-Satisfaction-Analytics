@@ -1,0 +1,131 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "848d28801944e1e44e5c",
+  "position": {
+    "x": 960,
+    "y": 48,
+    "z": 2002,
+    "height": 300,
+    "width": 300,
+    "tabOrder": 2002
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Management Recommendations"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "1. REDUCE DELAY-RELATED EXPERIENCE LOSS"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Prioritize operational improvements for major delays, where satisfaction falls to 70.23% and complaint rates rise to 42.79%."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "2. IMPROVE HIGH-IMPACT SERVICE AREAS"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Focus first on Seat Comfort and WiFi, which combine relatively low service ratings with the highest complaint volumes."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "3. TARGET HIGH-PRIORITY ROUTES"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Use the route-priority model to focus intervention on the 10 High Priority routes, beginning with the highest-scoring routes."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "4. STRENGTHEN RETURNING-PASSENGER EXPERIENCE"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Returning passengers show slightly lower satisfaction than first-time passengers while NPS remains virtually identical, suggesting an opportunity to improve retention and advocacy."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "5. MONITOR THE SUSTAINED SATISFACTION DECLINE"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "The 30-day rolling trend indicates a persistent deterioration in satisfaction, making ongoing operational monitoring important rather than relying only on monthly snapshots."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

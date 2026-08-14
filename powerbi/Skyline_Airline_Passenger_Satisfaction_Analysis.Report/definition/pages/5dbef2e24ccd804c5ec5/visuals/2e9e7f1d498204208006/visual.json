@@ -1,0 +1,75 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "2e9e7f1d498204208006",
+  "position": {
+    "x": 976,
+    "y": 416,
+    "z": 2003,
+    "height": 300,
+    "width": 300,
+    "tabOrder": 2003
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "EXECUTIVE TAKEAWAY"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Skyline Airlines' satisfaction decline is primarily associated with"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "operational disruption and specific service-quality weaknesses."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Management should prioritize delay reduction, improve WiFi and"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Seat Comfort, and focus resources on high-priority routes while"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "closely monitoring the continuing decline in passenger satisfaction."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -101,37 +101,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "435afc9127a476694407",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Dim Passenger"
-              }
-            },
-            "Property": "loyaltytier"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "8cf25484e5e0cb2da0d0",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Average NPS"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

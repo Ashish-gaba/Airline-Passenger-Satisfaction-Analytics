@@ -1,0 +1,93 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "48b613f9906d28957924",
+  "position": {
+    "x": 16,
+    "y": 416,
+    "z": 2000,
+    "height": 304,
+    "width": 480,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Service Categories"
+                    }
+                  },
+                  "Property": "Service Category"
+                }
+              },
+              "queryRef": "Service Categories.Service Category",
+              "nativeQueryRef": "Service Category",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Service Categories"
+                    }
+                  },
+                  "Property": "Average Service Rating"
+                }
+              },
+              "queryRef": "Service Categories.Average Service Rating",
+              "nativeQueryRef": "Average Service Rating"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Service Complaint Count"
+                }
+              },
+              "queryRef": "_Measures.Service Complaint Count",
+              "nativeQueryRef": "Service Complaint Count"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Service Areas Requiring Attention'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -66,3 +66,8 @@ relationship ca1a5d0c-ed77-4353-a175-8955b08ab488
 
 	annotation PBI_IsFromSource = FS
 
+relationship 4eaddc57-5b0f-4b8d-b54d-5dd97e21a4fb
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'warehouse vw_daily_satisfaction'.fulldate
+	toColumn: LocalDateTable_bb6604fe-d121-4411-a706-a0624811e34a.Date
+

@@ -148,37 +148,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e21c001d172bce3006da",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Service Categories"
-              }
-            },
-            "Property": "Service Category"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "373f330e801b2e8c3617",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Service Categories"
-              }
-            },
-            "Property": "Average Service Rating"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

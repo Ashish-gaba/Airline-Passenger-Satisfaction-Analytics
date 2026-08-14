@@ -4,7 +4,7 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 545.66166255017743,
+        "x": 0,
         "y": 0
       },
       "nodes": [
@@ -137,6 +137,19 @@
           "nodeLineageTag": "348c4e7e-8ddd-44b3-8ef0-9fba9c51f2b1",
           "size": {
             "height": 296,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 2120.1707534592683,
+            "y": 450.35603429106538
+          },
+          "nodeIndex": "warehouse vw_daily_satisfaction",
+          "nodeLineageTag": "938d9e76-0833-43b1-8b5a-81461d0a16ff",
+          "size": {
+            "height": 176,
             "width": 234
           },
           "zIndex": 0

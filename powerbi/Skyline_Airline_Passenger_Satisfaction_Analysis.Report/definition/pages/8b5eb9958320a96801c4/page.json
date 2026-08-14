@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
+  "name": "8b5eb9958320a96801c4",
+  "displayName": "Route & Revenue Analysis",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "pageBinding": {
+    "name": "ab3c646974b9b50c1b06",
+    "type": "Default",
+    "parameters": []
+  }
+}

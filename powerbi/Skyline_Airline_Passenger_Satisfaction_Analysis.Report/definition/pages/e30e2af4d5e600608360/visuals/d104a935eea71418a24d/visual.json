@@ -1,0 +1,159 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "d104a935eea71418a24d",
+  "position": {
+    "x": 24.000000000000004,
+    "y": 624,
+    "z": 13000,
+    "height": 96.000000000000014,
+    "width": 1128,
+    "tabOrder": 13000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Key Operational Findings",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "1. Flight delays are a major satisfaction driver",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " Satisfaction falls from "
+                  },
+                  {
+                    "value": "87.17% for on-time passengers to 70.23% for major delays",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": ", while complaint rates rise from "
+                  },
+                  {
+                    "value": "10.36% to 42.79%",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": "."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "2. WiFi & Seat Comfort are the biggest service pain points",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " "
+                  },
+                  {
+                    "value": "WiFi",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " combines the lowest service rating (~3.40) with "
+                  },
+                  {
+                    "value": "110 complaints",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": ", while "
+                  },
+                  {
+                    "value": "Seat Comfort",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " has the highest complaint volume ("
+                  },
+                  {
+                    "value": "113",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": ") with a relatively low rating (~3.57)."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "3. Satisfaction deterioration is persistent",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": " The "
+                  },
+                  {
+                    "value": "30-day rolling satisfaction trend",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": " declines from roughly "
+                  },
+                  {
+                    "value": "90% in October to ~75% by March",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  },
+                  {
+                    "value": ", indicating a sustained deterioration rather than isolated daily fluctuations."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

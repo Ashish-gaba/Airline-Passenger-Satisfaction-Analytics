@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "b9668780290692c099d7",
+  "position": {
+    "x": 656,
+    "y": 608,
+    "z": 14000,
+    "height": 96,
+    "width": 304,
+    "tabOrder": 14000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Business Implication for NPS by Customer Type - "
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Repeat passengers are not showing a stronger advocacy signal than first-time passengers, indicating an opportunity to improve the experience of existing customers and strengthen retention"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

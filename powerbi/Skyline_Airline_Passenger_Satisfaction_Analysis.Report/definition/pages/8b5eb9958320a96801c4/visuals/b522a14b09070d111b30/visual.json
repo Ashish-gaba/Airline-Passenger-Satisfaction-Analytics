@@ -1,0 +1,294 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "b522a14b09070d111b30",
+  "position": {
+    "x": 463.99999999999994,
+    "y": 240.00000000000003,
+    "z": 8000,
+    "height": 256,
+    "width": 544,
+    "tabOrder": 8000
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "warehouse vw_route_priority"
+                    }
+                  },
+                  "Property": "route"
+                }
+              },
+              "queryRef": "warehouse vw_route_priority.route",
+              "nativeQueryRef": "route",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "warehouse vw_route_priority"
+                    }
+                  },
+                  "Property": "priority_category"
+                }
+              },
+              "queryRef": "warehouse vw_route_priority.priority_category",
+              "nativeQueryRef": "priority_category"
+            }
+          ]
+        },
+        "Size": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "warehouse vw_route_priority"
+                        }
+                      },
+                      "Property": "passenger_count"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(warehouse vw_route_priority.passenger_count)",
+              "nativeQueryRef": "Sum of passenger_count"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "warehouse vw_route_priority"
+                        }
+                      },
+                      "Property": "route"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(warehouse vw_route_priority.route)",
+              "nativeQueryRef": "First route"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "warehouse vw_route_priority"
+                        }
+                      },
+                      "Property": "routetype"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(warehouse vw_route_priority.routetype)",
+              "nativeQueryRef": "First routetype"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "warehouse vw_route_priority"
+                        }
+                      },
+                      "Property": "passenger_count"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(warehouse vw_route_priority.passenger_count)",
+              "nativeQueryRef": "Sum of passenger_count"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "warehouse vw_route_priority"
+                        }
+                      },
+                      "Property": "satisfaction_rate"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(warehouse vw_route_priority.satisfaction_rate)",
+              "nativeQueryRef": "Average of satisfaction_rate1"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "warehouse vw_route_priority"
+                        }
+                      },
+                      "Property": "complaint_rate"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Avg(warehouse vw_route_priority.complaint_rate)",
+              "nativeQueryRef": "Average of complaint_rate"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "warehouse vw_route_priority"
+                        }
+                      },
+                      "Property": "priority_score"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(warehouse vw_route_priority.priority_score)",
+              "nativeQueryRef": "Sum of priority_score"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "warehouse vw_route_priority"
+                        }
+                      },
+                      "Property": "priority_category"
+                    }
+                  },
+                  "Function": 3
+                }
+              },
+              "queryRef": "Min(warehouse vw_route_priority.priority_category)",
+              "nativeQueryRef": "First priority_category"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "warehouse vw_route_priority"
+                        }
+                      },
+                      "Property": "satisfaction_rate"
+                    }
+                  },
+                  "Function": 1
+                }
+              },
+              "queryRef": "Sum(warehouse vw_route_priority.satisfaction_rate)",
+              "nativeQueryRef": "Average of satisfaction_rate1",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "warehouse vw_route_priority"
+                        }
+                      },
+                      "Property": "complaint_rate"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(warehouse vw_route_priority.complaint_rate)",
+              "nativeQueryRef": "Sum of complaint_rate"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "categoryLabels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Satisfaction vs Complaint Rate'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

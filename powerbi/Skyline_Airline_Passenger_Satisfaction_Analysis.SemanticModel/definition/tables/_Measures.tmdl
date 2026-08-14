@@ -217,6 +217,107 @@ table _Measures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Service Complaint Count' =
+			
+			SWITCH(
+			    SELECTEDVALUE('Service Categories'[Service Category]),
+			
+			    "WiFi",
+			        CALCULATE(
+			            COUNTROWS('Fact Passenger Experience'),
+			            'Fact Passenger Experience'[complainttype] = "WiFi"
+			        ),
+			
+			    "Entertainment",
+			        CALCULATE(
+			            COUNTROWS('Fact Passenger Experience'),
+			            'Fact Passenger Experience'[complainttype] = "Entertainment"
+			        ),
+			
+			    "Seat Comfort",
+			        CALCULATE(
+			            COUNTROWS('Fact Passenger Experience'),
+			            'Fact Passenger Experience'[complainttype] = "Seat Comfort"
+			        ),
+			
+			    "Food",
+			        CALCULATE(
+			            COUNTROWS('Fact Passenger Experience'),
+			            'Fact Passenger Experience'[complainttype] = "Food Quality"
+			        ),
+			
+			    "Boarding",
+			        CALCULATE(
+			            COUNTROWS('Fact Passenger Experience'),
+			            'Fact Passenger Experience'[complainttype] = "Boarding Process"
+			        ),
+			
+			    "Check-In",
+			        CALCULATE(
+			            COUNTROWS('Fact Passenger Experience'),
+			            'Fact Passenger Experience'[complainttype] = "Check-In Process"
+			        ),
+			
+			    "Baggage Handling",
+			        CALCULATE(
+			            COUNTROWS('Fact Passenger Experience'),
+			            'Fact Passenger Experience'[complainttype] = "Baggage Handling"
+			        ),
+			
+			    "Crew",
+			        CALCULATE(
+			            COUNTROWS('Fact Passenger Experience'),
+			            'Fact Passenger Experience'[complainttype] = "Crew Behaviour"
+			        ),
+			
+			    "Cleanliness",
+			        CALCULATE(
+			            COUNTROWS('Fact Passenger Experience'),
+			            'Fact Passenger Experience'[complainttype] = "Cabin Cleanliness"
+			        ),
+			
+			    BLANK()
+			)
+		formatString: 0
+		lineageTag: 774006fa-deea-43ae-b67d-f1e6648d2bce
+
+	measure 'Route Revenue' =
+			
+			SUM('warehouse vw_route_priority'[total_revenue])
+		lineageTag: 52b1711c-5d75-4ab2-95b3-800e1600e531
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average Route Priority' =
+			
+			AVERAGE('warehouse vw_route_priority'[priority_score])
+		lineageTag: 98ec0d31-5e42-469d-814c-fbba2792d3e2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Measure
+		lineageTag: ddd8469c-5912-4a30-a0d8-f57068f2af87
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
+	measure 'High Priority Routes' =
+			
+			CALCULATE(
+			    COUNTROWS('warehouse vw_route_priority'),
+			    'warehouse vw_route_priority'[priority_category] = "High Priority"
+			)
+		formatString: 0
+		lineageTag: ddc90a9b-cd29-49b6-ae85-3242e2055838
+
+	measure 'Critical Priority Routes' =
+			
+			CALCULATE(
+			    COUNTROWS('warehouse vw_route_priority'),
+			    'warehouse vw_route_priority'[priority_category] = "Critical Priority"
+			)
+		formatString: 0
+		lineageTag: 38a75666-da45-4cf2-8c82-ec5f8b70da05
+
 	column MeasureGroup
 		isHidden
 		lineageTag: 2e48e2b3-1f9b-499e-840b-7fd7d0b9605b

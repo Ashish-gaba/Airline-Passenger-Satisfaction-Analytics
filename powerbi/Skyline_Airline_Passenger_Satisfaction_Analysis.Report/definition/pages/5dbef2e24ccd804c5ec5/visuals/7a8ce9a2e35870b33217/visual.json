@@ -1,0 +1,161 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "7a8ce9a2e35870b33217",
+  "position": {
+    "x": 432,
+    "y": 416,
+    "z": 2001,
+    "height": 304,
+    "width": 656,
+    "tabOrder": 2001
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "warehouse vw_route_priority"
+                    }
+                  },
+                  "Property": "route"
+                }
+              },
+              "queryRef": "warehouse vw_route_priority.route",
+              "nativeQueryRef": "route"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "warehouse vw_route_priority"
+                    }
+                  },
+                  "Property": "priority_score"
+                }
+              },
+              "queryRef": "Sum(warehouse vw_route_priority.priority_score)",
+              "nativeQueryRef": "priority_score"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "warehouse vw_route_priority"
+                    }
+                  },
+                  "Property": "priority_category"
+                }
+              },
+              "queryRef": "warehouse vw_route_priority.priority_category",
+              "nativeQueryRef": "priority_category"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "warehouse vw_route_priority"
+                    }
+                  },
+                  "Property": "satisfaction_rate"
+                }
+              },
+              "queryRef": "Sum(warehouse vw_route_priority.satisfaction_rate)",
+              "nativeQueryRef": "satisfaction_rate"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "warehouse vw_route_priority"
+                    }
+                  },
+                  "Property": "complaint_rate"
+                }
+              },
+              "queryRef": "Sum(warehouse vw_route_priority.complaint_rate)",
+              "nativeQueryRef": "complaint_rate"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "warehouse vw_route_priority"
+                    }
+                  },
+                  "Property": "average_delay"
+                }
+              },
+              "queryRef": "Sum(warehouse vw_route_priority.average_delay)",
+              "nativeQueryRef": "average_delay"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "warehouse vw_route_priority"
+                    }
+                  },
+                  "Property": "total_revenue"
+                }
+              },
+              "queryRef": "Sum(warehouse vw_route_priority.total_revenue)",
+              "nativeQueryRef": "total_revenue"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "warehouse vw_route_priority"
+                  }
+                },
+                "Property": "priority_score"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'High-Priority Routes'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

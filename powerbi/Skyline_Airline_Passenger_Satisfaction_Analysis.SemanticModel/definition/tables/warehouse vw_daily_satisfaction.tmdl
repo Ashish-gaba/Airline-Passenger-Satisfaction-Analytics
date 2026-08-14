@@ -1,0 +1,57 @@
+table 'warehouse vw_daily_satisfaction'
+	lineageTag: 938d9e76-0833-43b1-8b5a-81461d0a16ff
+
+	column fulldate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 420e135c-1b2e-4ce4-8b75-d9e1c69baf50
+		summarizeBy: none
+		sourceColumn: fulldate
+
+		variation Variation
+			isDefault
+			relationship: 4eaddc57-5b0f-4b8d-b54d-5dd97e21a4fb
+			defaultHierarchy: LocalDateTable_bb6604fe-d121-4411-a706-a0624811e34a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column passenger_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 8d47b19b-43c8-443d-bad8-c1fd1ba95046
+		summarizeBy: sum
+		sourceColumn: passenger_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column daily_satisfaction_rate
+		dataType: double
+		lineageTag: cda4e311-eda0-474e-942c-2520bf0d8da1
+		summarizeBy: sum
+		sourceColumn: daily_satisfaction_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rolling_30_day_satisfaction
+		dataType: double
+		lineageTag: afd1f327-b870-4463-90c8-cb89f81a6f47
+		summarizeBy: sum
+		sourceColumn: rolling_30_day_satisfaction
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'warehouse vw_daily_satisfaction' = m
+		mode: import
+		source =
+				let
+				  Source = PostgreSQL.Database("localhost:5432", "skyline_airlines"),
+				  #"Navigation 1" = Source{[Schema = "warehouse", Item = "vw_daily_satisfaction"]}[Data]
+				in
+				  #"Navigation 1"
+

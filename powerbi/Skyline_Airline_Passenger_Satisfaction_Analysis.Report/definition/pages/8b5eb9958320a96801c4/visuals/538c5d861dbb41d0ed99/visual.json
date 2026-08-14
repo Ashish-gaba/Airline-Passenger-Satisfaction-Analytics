@@ -1,0 +1,117 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "538c5d861dbb41d0ed99",
+  "position": {
+    "x": 1007.9999999999999,
+    "y": 160,
+    "z": 11000,
+    "height": 544,
+    "width": 256,
+    "tabOrder": 11000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "KEY ROUTE & REVENUE INSIGHTS"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "⚠ PRIORITY"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "10 routes are classified as High Priority, while no routes currently fall into the Critical Priority category."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "🎯 ROUTE RISK"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "IXC-HYD ranks #1 with a priority score of 64.09 despite an 84.41% satisfaction rate, demonstrating that route risk depends on multiple factors beyond satisfaction alone."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "💰 REVENUE EXPOSURE"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Domestic routes generate approximately $34M in revenue compared with ~$22M from international routes, making domestic operations the larger revenue exposure."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "🔎 ACTION AREAS"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Routes such as DEL-BLR and DEL-SIN combine relatively low satisfaction with elevated complaint rates, making them strong candidates for operational investigation."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

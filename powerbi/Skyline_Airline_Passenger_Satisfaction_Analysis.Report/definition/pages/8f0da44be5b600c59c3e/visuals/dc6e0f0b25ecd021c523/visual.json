@@ -1,0 +1,117 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "dc6e0f0b25ecd021c523",
+  "position": {
+    "x": 1056,
+    "y": 176,
+    "z": 13000,
+    "height": 432,
+    "width": 224.00000000000003,
+    "tabOrder": 13000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "KEY CUSTOMER & LOYALTY INSIGHTS"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "👥 CUSTOMER MIX"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Nearly 48% of passengers have no recorded loyalty tier, making this the largest segment and a significant opportunity for loyalty-program conversion."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "🏆 LOYALTY PERFORMANCE"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Gold-tier passengers have the highest satisfaction at 82.39% and the lowest complaint rate at 17.80%, indicating the strongest overall customer experience among loyalty tiers."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "⚠ CUSTOMER EXPERIENCE"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Silver passengers have the highest complaint rate at 19.12%, despite maintaining an 81.59% satisfaction rate, suggesting an opportunity to investigate recurring service issues within this segment."
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "🔄 FIRST-TIME VS RETURNING"
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "First-time passengers show slightly higher satisfaction than returning passengers (82.51% vs 81.24%), while NPS is virtually identical (7.61 vs 7.60), suggesting limited differentiation in recommendation behavior between the two groups."
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

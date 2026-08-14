@@ -121,37 +121,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "cffe3b0d3c90408a74b0",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Fact Passenger Experience"
-              }
-            },
-            "Property": "Delay Category"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "9b613f480c259caa8260",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Satisfaction Rate"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
